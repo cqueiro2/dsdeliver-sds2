@@ -1,7 +1,7 @@
 import "./styles.css";
-import { ReactComponent as Pizza } from "./Pizza.svg";
+
 import { Product } from "./types";
-import { isTypeLiteralNode } from "typescript";
+
 
 type Props ={
   product: Product;
