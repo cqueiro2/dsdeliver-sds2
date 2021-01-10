@@ -18,6 +18,7 @@ public class OrderDTO implements Serializable{
     private Double longitude;
     private Instant moment;
     private OrderStatus status;
+    private Double total;
     
     private List<ProductDTO> products = new ArrayList<>();
     
@@ -33,7 +34,7 @@ public class OrderDTO implements Serializable{
 	 * @param moment
 	 * @param status
 	 */
-	public OrderDTO(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatus status) {
+	public OrderDTO(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatus status, Double total) {
 		
 		this.Id = id;
 		this.address = address;
@@ -43,69 +44,80 @@ public class OrderDTO implements Serializable{
 		this.status = status;
 	}
 
-public OrderDTO(Order entity) {
+	public OrderDTO(Order entity) {
+			
+			Id = entity.getId();;
+			address = entity.getAddress();
+			latitude = entity.getLatitude();
+			longitude = entity.getLongitude();
+			moment = entity.getMoment();
+			status = entity.getStatus();
+			total = entity.getTotal();
+			products = entity.getProducts().stream()
+					.map(x -> new ProductDTO(x)).collect(Collectors.toList());
+					}
+	
+		public Long getId() {
+			return Id;
+		}
 		
-		Id = entity.getId();;
-		address = entity.getAddress();
-		latitude = entity.getLatitude();
-		longitude = entity.getLongitude();
-		moment = entity.getMoment();
-		status = entity.getStatus();
-		products = entity.getProducts().stream()
-				.map(x -> new ProductDTO(x)).collect(Collectors.toList());
-				}
+		public void setId(Long id) {
+			Id = id;
+		}
+		
+		public String getAddress() {
+			return address;
+		}
+		
+		public void setAddress(String address) {
+			this.address = address;
+		}
+		
+		public Double getLatitude() {
+			return latitude;
+		}
+		
+		public void setLatitude(Double latitude) {
+			this.latitude = latitude;
+		}
+		
+		public Double getLongitude() {
+			return longitude;
+		}
+		
+		public void setLongitude(Double longitude) {
+			this.longitude = longitude;
+		}
+		
+		public Instant getMoment() {
+			return moment;
+		}
+		
+		public void setMoment(Instant moment) {
+			this.moment = moment;
+		}
+		
+		public OrderStatus getStatus() {
+			return status;
+		}
+		
+		public void setStatus(OrderStatus status) {
+			this.status = status;
+		}
+		
+		
+		
+		public Double getTotal() {
+			return total;
+		}
 
-public Long getId() {
-	return Id;
-}
+		public void setTotal(Double total) {
+			this.total = total;
+		}
 
-public void setId(Long id) {
-	Id = id;
-}
-
-public String getAddress() {
-	return address;
-}
-
-public void setAddress(String address) {
-	this.address = address;
-}
-
-public Double getLatitude() {
-	return latitude;
-}
-
-public void setLatitude(Double latitude) {
-	this.latitude = latitude;
-}
-
-public Double getLongitude() {
-	return longitude;
-}
-
-public void setLongitude(Double longitude) {
-	this.longitude = longitude;
-}
-
-public Instant getMoment() {
-	return moment;
-}
-
-public void setMoment(Instant moment) {
-	this.moment = moment;
-}
-
-public OrderStatus getStatus() {
-	return status;
-}
-
-public void setStatus(OrderStatus status) {
-	this.status = status;
-}
-
-public List<ProductDTO> getProducts() {
-	return products;
-}
+		public List<ProductDTO> getProducts() {
+			return products;
+		}
 
 
  
