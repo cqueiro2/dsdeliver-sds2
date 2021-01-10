@@ -3,8 +3,10 @@
 const StepsHeader = () => {
     return(
       <header className="orders-steps-container">
-         <div className="orders-steps-content"></div>
-         <h1 className="steps-title">SIGA AS<br/> ETAPAS</h1>
+         <div className="orders-steps-content">
+         <h1 className="steps-title">
+            SIGA AS<br/> ETAPAS
+         </h1>
          <ul className="steps-items">
              <li>
                 <span className="steps-number">1</span>
@@ -15,6 +17,7 @@ const StepsHeader = () => {
                 Depois click em <strong>"ENVIAR PEDIDO"</strong>
              </li>
          </ul>
+         </div>
       </header>
     )
 }
