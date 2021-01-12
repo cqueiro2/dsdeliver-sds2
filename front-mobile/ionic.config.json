@@ -1,7 +1,0 @@
-{
-  "name": "front-mobile",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "react"
-}
