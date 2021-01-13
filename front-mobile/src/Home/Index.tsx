@@ -16,7 +16,7 @@ export default function Home() {
       </View>
           <View style={styles.footer}>
               <RectButton style={styles.button} onPress={handleOnPress}>
-                <Text style={styles.buttonText}>VER PEDIDOS</Text>
+                <Text style={styles.buttonText}>VER PEDIDOS test</Text>
             </RectButton>
           </View>
           
