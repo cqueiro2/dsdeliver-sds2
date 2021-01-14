@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import Home from "./Home/Index";
 import Orders from './Orders/Index';
+import OrderDetails from "./OrderDetails/Index";
 
 
 const stack = createStackNavigator()
@@ -22,6 +23,7 @@ export default function Routes(){
          >
          <stack.Screen name="Home" component={Home}></stack.Screen>
          <stack.Screen name="Orders" component={Orders}></stack.Screen>
+         <stack.Screen name="OrderDetails" component={OrderDetails}></stack.Screen>
         </stack.Navigator>
         
     </NavigationContainer>
